@@ -182,7 +182,7 @@ const phone = (html, { x, y, w, rot = 0 }) => {
   const h = w * 2.165, sw = w - 22, s = sw / 390;
   return `<div class="phone" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;transform:rotate(${rot}deg)"><div class="scr"><div class="island"></div><div style="position:absolute;left:0;top:0;width:390px;height:${(h - 22) / s}px;transform:scale(${s});transform-origin:0 0;overflow:hidden">${html}</div></div></div>`;
 };
-const board = (c, { x, y, w, h }) => {
+const board = (c, { x, w }) => {
   const t = c.theme;
   const lg = c.logo ? `<img src="${L(c.logo)}" style="max-height:${Math.min(110, (c.logoH ?? 34) * 2.4)}px;max-width:75%">` : `<span class="wm" style="font-size:64px">${c.wordmark}</span>`;
   const sw = [[t.ac, "Primary"], [t.ac2, "Accent"], [t.fg, "Ink"], [t.card, "Surface"]];

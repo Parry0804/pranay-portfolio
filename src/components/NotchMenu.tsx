@@ -11,8 +11,8 @@ import { Clock } from "./Clock";
 const links = [
   { href: "/work", label: "Work", note: "13 projects", img: "/work/freshcoo/hero.jpg" },
   { href: "/about", label: "About", note: "Story & experience", img: "/about/pranay.jpg" },
-  { href: "/services", label: "Services", note: "4 ways I help", img: null },
-  { href: "/contact", label: "Contact", note: "Start a project", img: null },
+  { href: "/services", label: "Services", note: "4 ways I help", img: "/work/rara-energy/cover.jpg" },
+  { href: "/contact", label: "Contact", note: "Start a project", img: "/about/pranay-hero.jpg" },
 ];
 
 const ease = [0.16, 1, 0.3, 1] as const;

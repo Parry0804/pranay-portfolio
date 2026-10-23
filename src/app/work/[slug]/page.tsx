@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { visualFor } from "@/content/visuals";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Label } from "@/components/Button";
@@ -41,6 +42,7 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
     ["Outcome", p.outcome],
   ].filter(([, v]) => isReal(v));
   const gallery = p.gallery ?? [];
+  const detail = visualFor(p.slug).detail;
 
   return (
     <>
@@ -84,6 +86,15 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
           </Reveal>
         ))}
       </section>
+
+      {detail && (
+        <section className="px-4 pb-24 md:px-10 md:pb-32">
+          <RevealMedia className="relative mx-auto aspect-[16/10] max-w-[1600px] rounded-[4px] bg-bg-raised">
+            <Image src={detail} alt={`${p.client}: mobile screens and brand system`} fill sizes="100vw" className="object-cover" />
+          </RevealMedia>
+          <p className="t-label mx-auto mt-4 max-w-[1600px] text-fg-subtle">Concept visual of the {p.client} product</p>
+        </section>
+      )}
 
       {gallery.length > 0 && (
         <section className="mx-auto max-w-[1600px] px-4 md:px-10">

@@ -3,13 +3,14 @@ import Link from "next/link";
 import { Button, Label } from "@/components/Button";
 import { Clock } from "@/components/Clock";
 import { Footer } from "@/components/Footer";
-import { HeroPortrait } from "@/components/HeroPortrait";
+import { HeroPhoto } from "@/components/HeroPhoto";
 import { LogoMarquee, TextTicker } from "@/components/Marquee";
 import { Reveal, RevealMedia, RevealText } from "@/components/Reveal";
 import { ScrollWords } from "@/components/ScrollWords";
 import { ServiceRows } from "@/components/ServiceRows";
 import { Showcase } from "@/components/Showcase";
 import { Timeline } from "@/components/Timeline";
+import { Typewriter } from "@/components/Typewriter";
 import { WorkList } from "@/components/WorkList";
 import { featured, projects } from "@/content/projects";
 
@@ -27,14 +28,23 @@ export default function Home() {
             Available for 2 projects from Nov · <Clock />
           </span>
         </div>
-        <HeroPortrait className="absolute inset-x-0 top-[7%] h-[44%] md:inset-x-auto md:right-0 md:top-0 md:h-full md:w-[64%]" />
+        <HeroPhoto className="absolute inset-x-0 top-[8%] h-[62%] md:inset-x-auto md:right-[3%] md:top-[9%] md:aspect-[4/5] md:h-[91%]" />
         <div className="pointer-events-none relative mt-auto [&_a]:pointer-events-auto">
           <RevealText as="h1" text={"Pranay\nPawar"} immediate delay={0.2} className="t-display-xl" />
-          <div className="mt-10 grid max-w-[620px] gap-8">
+          <Reveal delay={0.55}>
+            <p className="t-h3 mt-6 text-fg-muted">
+              I lead{" "}
+              <Typewriter
+                className="text-fg"
+                phrases={["technology at GetHire", "product for 20+ companies", "design at Diznovate", "teams that ship"]}
+              />
+            </p>
+          </Reveal>
+          <div className="mt-8 grid max-w-[620px] gap-8">
             <Reveal delay={0.7}>
               <p className="t-body-l max-w-[560px] text-fg-muted">
-                <span className="text-fg">CTO at GetHire.</span> Founder of Diznovate and Talent Thread. Seven years of turning
-                rough ideas into products people actually use.
+                CTO at GetHire. Founder of Diznovate and Talent Thread. Seven years of turning rough ideas into
+                products people actually use.
               </p>
             </Reveal>
             <Reveal delay={0.85} className="flex flex-wrap gap-3">

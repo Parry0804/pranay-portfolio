@@ -49,7 +49,7 @@ export function HeroPhoto({ className = "" }: { className?: string }) {
   return (
     <div
       ref={host}
-      className={`overflow-hidden mix-blend-lighten [mask-image:linear-gradient(to_bottom,#000_55%,transparent_96%)] md:[mask-image:linear-gradient(to_right,transparent,#000_22%),linear-gradient(to_bottom,#000_70%,transparent)] md:[mask-composite:intersect] ${className}`}
+      className={`overflow-hidden mix-blend-lighten [mask-image:linear-gradient(to_bottom,#000_50%,transparent_98%)] md:[mask-image:linear-gradient(to_right,transparent,#000_30%),linear-gradient(to_bottom,#000_72%,transparent)] md:[mask-composite:intersect] ${className}`}
     >
       <motion.div
         className="absolute inset-0"
@@ -59,12 +59,12 @@ export function HeroPhoto({ className = "" }: { className?: string }) {
       >
         <div ref={layer} className="absolute inset-0 will-change-transform [transform:scale(1.04)]">
           <Image
-            src="/about/pranay-mono.jpg"
+            src="/about/pranay-hero.jpg"
             alt="Black and white portrait of Pranay Pawar"
             fill
             priority
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover object-[45%_15%] md:object-top"
+            sizes="(min-width: 768px) 60vw, 100vw"
+            className="object-cover object-[50%_20%] md:object-[60%_20%]"
           />
         </div>
       </motion.div>

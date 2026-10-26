@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button, Label } from "@/components/Button";
-import { Clock } from "@/components/Clock";
 import { Footer } from "@/components/Footer";
 import { HeroPhoto } from "@/components/HeroPhoto";
 import { LogoMarquee, TextTicker } from "@/components/Marquee";
@@ -21,7 +20,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative mx-auto flex min-h-[100svh] max-w-[1600px] flex-col overflow-x-clip px-4 pb-10 pt-24 md:px-10 md:pt-28">
+      <section className="relative mx-auto flex min-h-[100svh] max-w-[1600px] flex-col overflow-x-clip px-4 pb-12 pt-24 md:px-10 md:pb-16 md:pt-28">
         <HeroPhoto className="absolute inset-x-0 top-0 h-[74%] md:inset-x-auto md:right-0 md:h-full md:w-[62%] lg:w-[56%]" />
         <div className="relative hidden justify-between text-fg-muted md:flex">
           <span className="t-label">Portfolio — 2019 / 2026</span>
@@ -47,22 +46,36 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <div className="pointer-events-none relative mt-auto max-w-[680px] [&_a]:pointer-events-auto">
-          <Reveal delay={0.3} className="mb-5 flex items-center gap-2 text-fg-muted">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-success" />
-            <span className="t-label">Available for 2 projects from Nov<span className="hidden sm:inline"> · <Clock /></span></span>
+        <div className="pointer-events-none relative mt-auto max-w-[640px] [&_a]:pointer-events-auto">
+          {/* Keeps the text readable where it sits over the photo on phones */}
+          <div aria-hidden className="absolute -inset-x-4 -bottom-10 -top-16 -z-10 bg-gradient-to-t from-bg via-bg/85 to-transparent md:hidden" />
+          <Reveal immediate delay={0.15} className="flex items-center gap-2.5 text-fg-muted">
+            <span className="h-1.5 w-1.5 rounded-full bg-success shadow-[0_0_0_4px_rgba(76,195,138,0.15)]" />
+            <span className="t-label">Available for 2 projects from November</span>
           </Reveal>
-          <h1 className="font-display text-[clamp(2.6rem,6.2vw,5.75rem)] font-medium leading-[1] tracking-[-0.035em]">
-            <RevealText as="span" text="Hey, I'm" immediate delay={0.2} className="inline" />{" "}
-            <Typewriter phrases={["Pranay", "a CTO", "a product lead", "a designer"]} />
-          </h1>
-          <Reveal delay={0.6}>
-            <p className="t-body-l mt-6 max-w-[560px] text-fg-muted">
-              CTO at GetHire and founder of Diznovate and Talent Thread. I help startups turn rough ideas into products
-              people actually use, from New Delhi.
+          <RevealText
+            as="h1"
+            text={"Pranay\nPawar"}
+            immediate
+            delay={0.25}
+            className="mt-5 font-display text-[clamp(3.5rem,8.4vw,8rem)] font-medium leading-[0.9] tracking-[-0.045em]"
+          />
+          <Reveal immediate delay={0.55}>
+            <p className="mt-6 min-h-[1.3em] font-display text-[clamp(1.375rem,2.2vw,2rem)] leading-[1.2] tracking-[-0.02em] text-fg-muted">
+              I lead{" "}
+              <Typewriter
+                className="text-fg"
+                phrases={["product & technology", "engineering teams", "startups from idea to launch", "design that ships"]}
+              />
             </p>
           </Reveal>
-          <Reveal delay={0.75} className="mt-8 flex flex-wrap items-center gap-3 border-t border-line pt-8">
+          <Reveal immediate delay={0.7}>
+            <p className="mt-5 max-w-[480px] text-[16px] leading-[1.65] text-fg-muted md:text-[17px]">
+              CTO at GetHire, founder of Diznovate and Talent Thread. Seven years of turning rough ideas into products
+              people actually use.
+            </p>
+          </Reveal>
+          <Reveal immediate delay={0.85} className="mt-9 flex flex-wrap items-center gap-3">
             <Link
               href="/work"
               aria-label="See my work"

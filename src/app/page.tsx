@@ -71,7 +71,7 @@ export default function Home() {
           </Reveal>
           <Reveal immediate delay={0.7}>
             <p className="mt-5 max-w-[480px] text-[16px] leading-[1.65] text-fg-muted md:text-[17px]">
-              CTO at GetHire, founder of Diznovate and Talent Thread. Seven years of turning rough ideas into products
+              Founder of Diznovate and Talent Thread. Seven years of turning rough ideas into products
               people actually use.
             </p>
           </Reveal>
